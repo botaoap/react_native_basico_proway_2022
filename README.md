@@ -15,3 +15,4 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Instalar se não tiver instaldo: [NodeJS](https://nodejs.org/en/download/) 
 
 ## Duvidas RN
+- Comandos no terminal: [Terminal](codeTerminal.md)
