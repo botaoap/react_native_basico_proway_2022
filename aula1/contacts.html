@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+          transition: 0.3s;
+          width: 40%;
+        }
+        
+        .card:hover {
+          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        
+        .container {
+          padding: 2px 16px;
+          margin-bottom: 10px;
+        }
+        </style>
+</head>
+<body onload="load()">
+    <button onclick="load(displayTable)">Ver lista</button>
+    <button onclick="load(displayTableParam)">Ver paragrafo</button>
+    <button onclick="load(displayTableAvatar)">Ver cards</button>
+
+    <h1>Lista de contatos</h1>
+    <table>
+        <tbody>
+            <!-- Dados vem da funcao javascript -->
+        </tbody>
+    </table>
+    <h1>Lista de Paragrafos</h1>
+    <p> 
+        <!-- Dados vem da funcao javascript -->
+    </p>
+    <h1>Lista de Cards</h1>
+    <div>
+        <!-- Dados vem da funcao javascript -->
+    </div>
+      
+    <script>
+        function load(callBack) {
+            fetch("http://localhost:3000/contacts")
+            .then(data => data.json())
+            .then(response => callBack(response))
+        }
+
+        function displayTable(data) {
+            var linhas = ''
+            for(let i=0; i<data.length; i++) {
+                linhas += 
+                `<tr>
+                    <td>${data[i].id}</td>
+                    <td>${data[i].name}</td>
+                    <td>${data[i].email}</td>
+                </tr>`
+            }
+            document.getElementsByTagName('tbody')[0].innerHTML = linhas
+        }
+        
+        function displayTableParam(data) {
+            var linhas = ''
+            for(let i=0; i<data.length; i++) {
+                linhas += 
+                `<p>${data[i].id} ${data[i].name} ${data[i].email}</p>`
+            }
+            document.getElementsByTagName('p')[0].innerHTML = linhas
+        }
+        function displayTableAvatar(data) {
+            var linhas = ''
+            for(let i=0; i<data.length; i++) {
+                linhas += 
+                `<div class="card">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <h4><b>${data[i].name}</b></h4>
+                        <p>${data[i].email}</p>
+                    </div>
+                </div>`
+            }
+            document.getElementsByTagName('div')[0].innerHTML = linhas
+        }
+        
+
+    </script>
+</body>
+</html>
