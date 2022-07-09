@@ -44,7 +44,7 @@
       
     <script>
         function load(callBack) {
-            fetch("http://localhost:3000/contacts")
+            fetch("http://localhost:8080/contacts")
             .then(data => data.json())
             .then(response => callBack(response))
         }
