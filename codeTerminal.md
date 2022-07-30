@@ -4,4 +4,8 @@
 - npm install nodemon
 - npx nodemon [your node app]
 - npm install express
-- 
+- ---------------------
+- npm install expo-cli
+- npx expo init AwesomeProject
+- cd AwesomeProject
+- npm start
