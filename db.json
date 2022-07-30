@@ -1,19 +1,24 @@
 {
-    "contacts":[
-        {
-            "id":1,
-            "name":"jose",
-            "email":"jose@gmail.com"
-        },
-        {
-            "id":2,
-            "name":"maria",
-            "email":"maria@gmail.com"
-        },
-        {
-            "id":2,
-            "name":"joao",
-            "email":"joao@gmail.com"
-        }
-    ]
+  "contacts": [
+    {
+      "id": 1,
+      "name": "jose",
+      "email": "jose@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "maria",
+      "email": "maria@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "joao",
+      "email": "joao@gmail.com"
+    },
+    {
+      "name": "Lorde",
+      "email": "lorde@gmail.com",
+      "id": 4
+    }
+  ]
 }
